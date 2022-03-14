@@ -1,0 +1,89 @@
+//endpoits para las compras
+
+###
+POST http://localhost:3000/api/v1/buys/buy HTTP/1.1
+Content-Type : application/json
+
+{
+  "DueDate": "2022-03-15",
+  "dni": "1053811422",
+  "Status": "Payable",
+  "Line": {
+  "buy":{
+  "Amount": 500,
+  "DetailType": "ExpenseDetail",
+  "ExpenseDetail": {
+  "Customer": {
+  "value": "valor",
+  "name": "Yaneth Customer",
+  "Ref": {
+  "value": "uet987",
+  "name": "Sample Construction"
+  }
+  },
+  "Account": {
+  "value": "valor",
+  "name": "Fuel"
+  },
+  "LineStatus": "Billable"
+  }
+  }
+  },
+  "Vendor": {
+  "value": "valorDePrueba",
+  "name": "Sample Bank"
+  },
+  "TotalAmt": 1990.19
+  }
+
+###
+GET http://localhost:3000/api/v1/buys HTTP/1.1
+
+###
+GET http://localhost:3000/api/v1/buys/622f7adb44d57d8aa57c788a HTTP/1.1
+
+
+//punto a
+###
+GET http://localhost:3000/api/v1/buys/invoice/uet987 HTTP/1.1
+
+###
+DELETE http://localhost:3000/api/v1/buys/622f6e1d5d4bf05af3bb8d1c HTTP/1.1
+
+
+###
+PUT http://localhost:3000/api/v1/buys/622fd049a036a6c01679f784 HTTP/1.1
+Content-Type : application/json
+
+{
+  "DueDate": "2021-03-20",
+  "dni": "1053811422",
+  "Status": "Payable",
+  "Line": {
+  "buy":{
+  "Amount": 500,
+  "DetailType": "ExpenseDetail",
+  "ExpenseDetail": {
+  "Customer": {
+  "value": "3000",
+  "name": "Sample Customer",
+  "Ref": {
+  "value": "uet987",
+  "name": "Sample Construction"
+  }
+  },
+  "Account": {
+  "value": "valor",
+  "name": "Fuel"
+  },
+  "LineStatus": "Billable"
+  }
+  }
+  },
+  "Vendor": {
+  "value": "valorDePrueba",
+  "name": "Sample Bank"
+  },
+  "TotalAmt": 1990.19
+  }
+
